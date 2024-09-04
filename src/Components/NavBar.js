@@ -7,6 +7,7 @@ import Flower3 from "../assets/images/navbar/1716546293_5.jpg";
 import Flower4 from "../assets/images/navbar/1716546310_2.jpg";
 import UniqueTreats from "../assets/images/navbar/1716548795_Happy Birthday Hamper .jpg";
 import UniqueTreats2 from "../assets/images/navbar/1716548833_Cadbury Variety.jpg";
+import { useNavigate } from "react-router-dom";
 function NavBar() {
   const links = [
     "Summer Bloms",
@@ -28,24 +29,27 @@ function NavBar() {
     {
       title: "Unique Treats",
       items: [
-        { src: UniqueTreats, alt: "Happy Birthday Hamper", name: "Happy Birthday Hamper" },
+        {
+          src: UniqueTreats,
+          alt: "Happy Birthday Hamper",
+          name: "Happy Birthday Hamper",
+        },
         { src: UniqueTreats2, alt: "Cadbury Variety", name: "Cadbury Variety" },
       ],
     },
   ];
+  const navigate = useNavigate();
 
   const [popup, setPopup] = useState(null);
 
   const handleMouseEnter = (link) => {
     if (link === "Flowers" || link === "Unique Treats") {
       setPopup(link);
-      
     }
   };
 
   const handleMouseLeave = () => {
     setPopup(null);
-    
   };
 
   return (
@@ -60,7 +64,7 @@ function NavBar() {
         <div className="navbar-right-container">
           <div className="upper-part">
             <div className="navbar-sign-in-register">
-              <p>Sign In / Register |</p>
+              <p onClick={() => navigate("/sign-up")}>Sign In / Register |</p>
             </div>
             <div className="navbar-cart-icons">
               <i className="fa-solid fa-phone"></i> <p>+1234567890 |</p>
@@ -72,7 +76,13 @@ function NavBar() {
           <div className="lower-part">
             <div className="navbar-words">
               <p>Earliest available delivery</p>
-              <span>{new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}</span>
+              <span>
+                {new Date().toLocaleDateString("en-GB", {
+                  weekday: "long",
+                  day: "numeric",
+                  month: "long",
+                })}
+              </span>
             </div>
           </div>
         </div>
