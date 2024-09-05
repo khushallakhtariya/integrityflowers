@@ -3,6 +3,7 @@ import "../assets/slider/slider.css";
 
 function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [animation, setAnimation] = useState("slideIn");
   const slides = [
     {
       title: "FLOWERS FOR ALL OCCASION",
@@ -15,11 +16,19 @@ function Slider() {
   ];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setAnimation("slideOut");
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setAnimation("slideIn");
+    }, 500);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setAnimation("slideOut");
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+      setAnimation("slideIn");
+    }, 500);
   };
 
   useEffect(() => {
@@ -30,10 +39,26 @@ function Slider() {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
+  // Add event listener for key presses
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowRight") {
+        nextSlide();
+      } else if (event.key === "ArrowLeft") {
+        prevSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="slider">
       <button onClick={prevSlide}>{"<"}</button>
-      <div className="slider-content">
+      <div className={`slider-content ${animation}`}>
         <p>{slides[currentSlide].title}</p>
         <p>{slides[currentSlide].description}</p>
       </div>

@@ -70,7 +70,7 @@ function View() {
           price: "£89.99 £44.99",
         },
         {
-          src: img1,
+          src: img12,
           alt: "Fizz",
           price: "£89.99 £44.99",
         },

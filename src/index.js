@@ -11,7 +11,9 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Sign from "./Components/Sign";
+import Sign from "./Components//Sign";
+import { TransitionGroup, CSSTransition } from 'react-transition-group'; // Import transition components
+import Register from "./Components/Register"; // Import Register component
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 
@@ -33,3 +39,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+

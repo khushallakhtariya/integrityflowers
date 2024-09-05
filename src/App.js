@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Slider />
-      <Content />
+      <Content /> 
       <Shopping />
       <View />
       <EmailSection />
