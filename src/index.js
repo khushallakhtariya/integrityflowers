@@ -12,8 +12,9 @@ import {
   Link,
 } from "react-router-dom";
 import Sign from "./Components//Sign";
-import { TransitionGroup, CSSTransition } from 'react-transition-group'; // Import transition components
+import { TransitionGroup, CSSTransition } from "react-transition-group"; // Import transition components
 import Register from "./Components/Register"; // Import Register component
+import Number from "./Components/Number"; // Import Register component
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
+  {
+    path: "/number",
+    element: <Number />,
+  },
 ]);
 
 ReactDOM.render(
@@ -39,4 +44,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-

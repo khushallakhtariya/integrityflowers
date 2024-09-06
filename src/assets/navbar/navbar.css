@@ -193,3 +193,76 @@
     margin: 10px;
   }
 }
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  right: -300px; 
+  width: 300px; 
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+.sidebar-container.open {
+  transition: all 0.5s ease;
+  right: 0;
+}
+
+
+.basket-header{
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;    
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;  
+}
+.basket-header span{
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+}
+
+.promo-code{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.promo-code-input{
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-code-input input{
+  height: 100%; 
+  width: 80%; 
+  outline: none;
+  border: 1px solid greenyellow;  
+}
+
+.promo-code-input button{
+  height: 100%;
+  width: 30%;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: pink;
+color: #fff;
+}
+

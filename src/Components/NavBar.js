@@ -8,6 +8,7 @@ import Flower4 from "../assets/images/navbar/1716546310_2.jpg";
 import UniqueTreats from "../assets/images/navbar/1716548795_Happy Birthday Hamper .jpg";
 import UniqueTreats2 from "../assets/images/navbar/1716548833_Cadbury Variety.jpg";
 import { useNavigate } from "react-router-dom";
+
 function NavBar() {
   const links = [
     "Summer Bloms",
@@ -41,6 +42,7 @@ function NavBar() {
   const navigate = useNavigate();
 
   const [popup, setPopup] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleMouseEnter = (link) => {
     if (link === "Flowers" || link === "Unique Treats") {
@@ -50,6 +52,21 @@ function NavBar() {
 
   const handleMouseLeave = () => {
     setPopup(null);
+  };
+
+  const handleSideBar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const [code, setCode] = useState("");
+
+  const handleCodeChange = (event) => {
+    setCode(event.target.value);
+  };
+
+  const handleApply = () => {
+    // Handle applying the promo code
+    console.log("Applying code:", code);
   };
 
   return (
@@ -67,10 +84,12 @@ function NavBar() {
               <p onClick={() => navigate("/sign-up")}>Sign In / Register |</p>
             </div>
             <div className="navbar-cart-icons">
-              <i className="fa-solid fa-phone"></i> <p>+1234567890 |</p>
+              <i className="fa-solid fa-phone"></i>{" "}
+              <p onClick={() => navigate("/number")}>+1234567890 |</p>
             </div>
             <div className="navbar-cart-icons">
-              <i className="fa-solid fa-basket-shopping"></i> <p>Basket (0)</p>
+              <i className="fa-solid fa-basket-shopping"></i>{" "}
+              <p onClick={handleSideBar}>Basket (0)</p>
             </div>
           </div>
           <div className="lower-part">
@@ -124,6 +143,34 @@ function NavBar() {
               ))}
             <div className="popup-button">
               <button>View our full range of flowers</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {isSidebarOpen && (
+        <div className={`sidebar-container ${isSidebarOpen ? "open" : ""}`}>
+          <div className="basket-header">
+            <h1>Basket</h1>
+            <span className="close-button" onClick={handleSideBar}>
+              <i className="fa-solid fa-x"></i>
+            </span>
+          </div>
+          <div className="promo-code">
+            <label htmlFor="promo-code">Promo/voucher code</label>
+            <div className="promo-code-input">
+              <input
+                type="text"
+                id="promo-code"
+                value={code}
+                onChange={handleCodeChange}
+                placeholder="Enter your code"
+              />
+              <button onClick={handleApply} className="apply-button">
+                Apply
+              </button>
+            </div>
+            <div className="sidebar-content">
+              <div className="sidebar-item"></div>
             </div>
           </div>
         </div>
