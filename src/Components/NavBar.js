@@ -244,7 +244,7 @@ function NavBar({ name, date, price }) {
                     <span>{deliveryDate}</span>
                   </div>
                   <div className="edit-icon" onClick={handleEditDate}>
-                    &#9997;
+                    <i className="fa-solid fa-pencil"></i>
                   </div>
                 </div>
                 <div className="basket-buttons">

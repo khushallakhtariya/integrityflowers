@@ -224,3 +224,130 @@
   width: 100%;
 }
 
+@media (max-width: 1200px) {
+  .main-Content {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .selected-item, .information {
+    width: 100%;
+  }
+
+  .continue-button {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-div {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .main-Content {
+    padding: 10px;
+  }
+
+  .selected-item img {
+    margin-bottom: 10px;
+  }
+
+  .selected-item a {
+    padding: 8px 12px;
+  }
+
+  .flex h3 {
+    font-size: 24px;
+  }
+
+  .flex p {
+    font-size: 20px;
+  }
+
+  .information-item-1, .information-item {
+    font-size: 16px;
+  }
+
+  .contents select {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .option-container h3 {
+    font-size: 18px;
+  }
+
+  .option-item {
+    padding: 10px;
+  }
+
+  .option-item label {
+    font-size: 16px;
+  }
+
+  .continue-button {
+    width: 70%;
+    margin-left: 15%;
+    font-size: 1.2rem;
+  }
+
+  .related-items {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .related-items i {
+    font-size: 1.5rem;
+  }
+
+  .mini-card {
+    width: 20%;
+  }
+
+  .mini-card button {
+    height: 60px;
+    font-size: 0.9rem;
+  }
+
+  .big-checkbox {
+    width: 30px;
+    height: 30px;
+  }
+
+  .place-order-button {
+    height: 60px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flex h3 {
+    font-size: 20px;
+  }
+
+  .flex p {
+    font-size: 18px;
+  }
+
+  .continue-button {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 1rem;
+  }
+
+  .mini-card {
+    width: 30%;
+  }
+
+  .mini-card button {
+    height: 50px;
+    font-size: 0.8rem;
+  }
+
+  .place-order-button {
+    height: 50px;
+    font-size: 1rem;
+  }
+}

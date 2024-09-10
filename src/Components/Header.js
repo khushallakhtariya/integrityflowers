@@ -38,7 +38,6 @@ const Header = () => {
       </div>
       <div className="cart-icon">
         <i className="fa-solid fa-basket-shopping"></i>
-        <div className="cart-count">0</div>
       </div>
     </div>
   );

@@ -2,23 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
 .form-group-ll {
     margin-bottom: 1rem;
     display: flex;
-
-    width: 400px;
+    width: 200%; /* Adjusted to be responsive */
     flex-direction: column; /* Add this line to make fields vertical */
 }
   
-label {
+.label-ll{
     display: block;
-    margin-bottom: 0.5rem;
-    width: 100%; 
-    
+    width: 100%;    
 }
   
 input[type="text"],
@@ -37,7 +34,6 @@ select {
     color: white;
     padding: 0.8rem 1.5rem;
     border: none;
-
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -46,9 +42,33 @@ select {
 .btn:hover {
     background-color: #d46b78; /* Slightly darker pink on hover */
 }
+
 .form-ll{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .form-group-ll {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .btn-ll {
+        width: 100%; /* Full width button on smaller screens */
+        padding: 0.8rem; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group-ll {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .btn-ll {
+        width: 100%; /* Full width button on very small screens */
+        padding: 0.6rem; /* Adjust padding for very small screens */
+    }
 }

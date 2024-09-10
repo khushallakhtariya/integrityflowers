@@ -177,20 +177,105 @@
 
 
 @media (max-width: 768px) {
-  *{
-    width: 100%;
+  .navbar {
+    max-width: 100%;
+    margin-top: 0;
   }
-  .upper-part {
-    display: none; /* Hide the menu items by default */
+
+  .navbar-container {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-left-container input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-logo {
+    height: 80px;
+    width: 200px;
+    margin-top: 10px;
+  }
+
+  .navbar-right-container .upper-part,
+  .upper-part,
+  .lower-part {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-cart-icons,
+  .navbar-words {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-words span {
+    margin-left: 0;
+    font-size: 16px;
+  }
+
+  .navbar-links table {
+    margin-top: 10px;
+  }
+
+  .popup {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .popup img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .popup-button button {
+    width: 80%;
+    left: 10%;
+    bottom: 20px;
+  }
+
+  .sidebar-container {
+    width: 100%;
+    right: -100%;
+  }
+
+  .sidebar-container.open {
+    right: 0;
+  }
+
+  .basket-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .basket-header span {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .promo-code,
+  .promo-code-input,
+  .order-summary,
+  .order-details,
+  .delivery-date,
+  .delivery-date-text,
+  .basket-buttons {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .promo-code-input input,
+  .promo-code-input button {
     width: 100%;
   }
 
-  .menu-icon {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 10px;
+  .remove-order,
+  .checkout-button {
+    width: 100%;
   }
 }
 

@@ -98,14 +98,13 @@
   }
   
 .section {
-       margin: 20px;
        width: 100%;
        flex: 1 1;
        text-align: left;
    }
   
 .section h2 {
-    margin-bottom: 10px;
+    text-align: left;
     color: #333;
   }
   
@@ -165,7 +164,13 @@
 .copyright:hover {
     text-decoration: underline;
 }
-
+.social-media{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 15px;
+}
 .social-media ul {
     list-style: none;
     padding: 0;
@@ -240,5 +245,77 @@
 
 
 .payment i{
-  font-size: 70px;
+  font-size: 50px;
+}
+
+@media (max-width: 768px) {
+  .subscribe-form-container {
+    width: 100%;
+  }
+
+  .about-us {
+    width: 100;
+    font-size: 10px;
+  }
+
+  .content {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .payment {
+    width: 100%;
+    margin-left: 0;
+    font-size: 30px;
+    margin-top: 0;
+  
+  }
+
+  .copyright {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .section-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscribe-form-container {
+    width: 100%;
+  }
+
+  .about-us {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .content {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .payment {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .copyright {
+    width: 100%;
+  }
+
+  .section-content {
+    width: 100%;
+  }
 }

@@ -1,13 +1,12 @@
 .add-card-container {
     display: flex;
     justify-content: center;
-
     align-items: center;
     padding: 20px;
     gap: 60px;
-  }
-  
-  .card-icon img{
+}
+
+.card-icon img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -15,8 +14,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .cart-icon{
+}
+
+.cart-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -24,26 +24,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .add-card-text {
+}
+
+.add-card-text {
     text-align: center;
-  }
-  
-  .add-card-text h1 {
+}
+
+.add-card-text h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
-  .steps {
+}
+
+.steps {
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-  }
-  
-  .step {
+}
+
+.step {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -53,18 +53,16 @@
     align-items: center;
     font-size: 16px;
     font-weight: bold;
-  }
-  
-  .line {
+}
+
+.line {
     width: 50px;
     height: 2px;
     background-color: #ddd;
     margin: 0 10px;
-  }
-  
+}
 
-  
-  .cart-count {
+.cart-count {
     position: absolute;
     top: 30px;
     right: 530px;
@@ -78,27 +76,75 @@
     align-items: center;
     font-size: 12px;
     font-weight: bold;
-  }
-  
-  /* .fa-basket-shopping{
+}
+
+/* .fa-basket-shopping{
     font-size: 30px;
-  } */
-  
-  .step.completed {
+} */
+
+.step.completed {
     background-color: darkgray; /* or any color you prefer */
     font-weight: bold;
-  }
-  
-  .step.active {
-    background-color: dark; /* or any color you prefer */
-  }
+}
 
-  .card-number{
+.step.active {
+    background-color: dark; /* or any color you prefer */
+}
+
+.card-number {
     display: flex;
     justify-content: space-between;
-  }
+}
 
-  .card-number a{
+.card-number a {
     text-decoration: none;
     color: black;
-  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .add-card-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cart-count {
+        top: 20px;
+        right: 20px;
+    }
+
+    .step {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .line {
+        width: 30px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-card-text h1 {
+        font-size: 20px;
+    }
+
+    .cart-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cart-count {
+        top: 10px;
+        right: 10px;
+        width: 15px;
+        height: 15px;
+        font-size: 10px;
+    }
+}

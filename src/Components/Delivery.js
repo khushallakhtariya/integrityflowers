@@ -36,7 +36,9 @@ const Delivery = () => {
       <div className="delivery-container-ll">
         <form className="form-ll" onSubmit={handleSubmit}>
           <div className="form-group-ll">
-            <label htmlFor="fullName">Full name:</label>
+            <label className="label-ll" htmlFor="fullName">
+              Full name:
+            </label>
             <input
               type="text"
               id="fullName"
@@ -47,7 +49,9 @@ const Delivery = () => {
             />
           </div>
           <div className="form-group-ll">
-            <label htmlFor="phone">Phone:</label>
+            <label className="label-ll" htmlFor="phone">
+              Phone:
+            </label>
             <input
               type="tel"
               id="phone"
@@ -58,7 +62,9 @@ const Delivery = () => {
             />
           </div>
           <div className="form-group-ll">
-            <label htmlFor="addressLine1">Delivery address line 1:</label>
+            <label className="label-ll" htmlFor="addressLine1">
+              Delivery address line 1:
+            </label>
             <input
               type="text"
               id="addressLine1"
@@ -69,7 +75,9 @@ const Delivery = () => {
             />
           </div>
           <div className="form-group-ll">
-            <label htmlFor="addressLine2">Delivery address line 2:</label>
+            <label className="label-ll" htmlFor="addressLine2">
+              Delivery address line 2:
+            </label>
             <input
               type="text"
               id="addressLine2"
@@ -79,7 +87,9 @@ const Delivery = () => {
             />
           </div>
           <div className="form-group-ll">
-            <label htmlFor="city">City:</label>
+            <label className="label-ll" htmlFor="city">
+              City:
+            </label>
             <input
               type="text"
               id="city"
@@ -90,7 +100,9 @@ const Delivery = () => {
             />
           </div>
           <div className="form-group-ll">
-            <label htmlFor="country">Country:</label>
+            <label className="label-ll" htmlFor="country">
+              Country:
+            </label>
             <select
               id="country"
               name="country"
@@ -102,7 +114,9 @@ const Delivery = () => {
             </select>
           </div>
           <div className="form-group-ll">
-            <label htmlFor="postcode">Postcode:</label>
+            <label className="label-ll" htmlFor="postcode">
+              Postcode:
+            </label>
             <input
               type="text"
               id="postcode"
