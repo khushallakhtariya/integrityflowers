@@ -15,7 +15,7 @@ function App() {
       <Shopping />
       <View />
       <EmailSection />
-      <Footer />
+      <Footer />  
     </div>
   );
 }

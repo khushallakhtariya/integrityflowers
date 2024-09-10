@@ -1,0 +1,23 @@
+.checkout-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-header  {
+  height: 60px;
+  text-align: center;
+  width: 70%;
+  font-size: 15px;
+  background-color: #f6f6f6;
+}
+
+.checkout-body{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+

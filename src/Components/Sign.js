@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import "../assets/sign/Sign.css"; // Make sure to convert your CSS to a React-compatible CSS file
+import "../assets/sign/Sign.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NavBar from "./NavBar";
+
 import {
   faGooglePlusG,
   faFacebookF,
   faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
-import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 const Sign = () => {
@@ -23,6 +24,9 @@ const Sign = () => {
 
   return (
     <>
+      <div className="container-div-navbar">
+        <NavBar />
+      </div>
       <div className="Main-ss">
         <div className="body-ss">
           <div

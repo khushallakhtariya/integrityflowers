@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/navbar/navbar.css";
 import logo from "../assets/images/navbar/Integrityflowers Transparent cropped .ad071a6edeebd795f001.png";
 import Flower from "../assets/images/navbar/1716546254_7.jpg";
@@ -7,9 +7,9 @@ import Flower3 from "../assets/images/navbar/1716546293_5.jpg";
 import Flower4 from "../assets/images/navbar/1716546310_2.jpg";
 import UniqueTreats from "../assets/images/navbar/1716548795_Happy Birthday Hamper .jpg";
 import UniqueTreats2 from "../assets/images/navbar/1716548833_Cadbury Variety.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ name, date, price }) {
   const links = [
     "Summer Bloms",
     "Flowers",
@@ -40,6 +40,7 @@ function NavBar() {
     },
   ];
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [popup, setPopup] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -69,6 +70,65 @@ function NavBar() {
     console.log("Applying code:", code);
   };
 
+  const [deliveryDate, setDeliveryDate] = useState(
+    "Wednesday 11th September 2024"
+  );
+
+  const handleEditDate = () => {
+    // Implement logic to edit delivery date, e.g., open a date picker
+    console.log("Edit delivery date clicked");
+  };
+
+  const handleRemoveOrder = () => {
+    setOrder(null);
+    setDeliveryDate(null);
+    localStorage.removeItem("order");
+    localStorage.removeItem("deliveryDate");
+    console.log("Remove order clicked");
+  };
+
+  const [order, setOrder] = useState({
+    name: "Mellow Yellow Bouquet",
+    originalPrice: 99.99,
+    discountedPrice: 49.99,
+    // Add other fields here
+  });
+
+  useEffect(() => {
+    const savedOrder = localStorage.getItem("order");
+    const savedDeliveryDate = localStorage.getItem("deliveryDate");
+    if (savedOrder) {
+      setOrder(JSON.parse(savedOrder));
+    }
+    if (savedDeliveryDate) {
+      setDeliveryDate(savedDeliveryDate);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (order) {
+      localStorage.setItem("order", JSON.stringify(order));
+    } else {
+      localStorage.removeItem("order");
+    }
+    if (deliveryDate) {
+      localStorage.setItem("deliveryDate", deliveryDate);
+    } else {
+      localStorage.removeItem("deliveryDate");
+    }
+  }, [order, deliveryDate]);
+
+  useEffect(() => {
+    setOrder((prevOrder) => ({
+      ...prevOrder,
+      name: name || "Mellow Yellow Bouquet",
+      originalPrice: Number(price) || 99.99,
+      discountedPrice: price ? Number(price) * 0.5 : 49.99,
+      // Update other fields here
+    }));
+    setDeliveryDate(date || "Wednesday 11th September 2024");
+  }, [name, date, price]);
+
   return (
     <div className="navbar">
       <div className="navbar-container">
@@ -89,7 +149,7 @@ function NavBar() {
             </div>
             <div className="navbar-cart-icons">
               <i className="fa-solid fa-basket-shopping"></i>{" "}
-              <p onClick={handleSideBar}>Basket (0)</p>
+              <p onClick={handleSideBar}>Basket ({order ? 1 : 0})</p>
             </div>
           </div>
           <div className="lower-part">
@@ -169,6 +229,37 @@ function NavBar() {
                 Apply
               </button>
             </div>
+            {order && (
+              <div className="order-summary">
+                <div className="order-details">
+                  <h2>{order.name}</h2>
+                </div>
+                <div className="total">
+                  Total: £{order.originalPrice.toFixed(2)} £
+                  {order.discountedPrice.toFixed(2)}
+                </div>
+                <div className="delivery-date">
+                  <div className="delivery-date-text">
+                    <p>Delivery date</p>
+                    <span>{deliveryDate}</span>
+                  </div>
+                  <div className="edit-icon" onClick={handleEditDate}>
+                    &#9997;
+                  </div>
+                </div>
+                <div className="basket-buttons">
+                  <button className="remove-order" onClick={handleRemoveOrder}>
+                    Remove order
+                  </button>
+                  <button
+                    className="checkout-button"
+                    onClick={() => navigate("/checkout")}
+                  >
+                    Checkout
+                  </button>
+                </div>
+              </div>
+            )}
             <div className="sidebar-content">
               <div className="sidebar-item"></div>
             </div>

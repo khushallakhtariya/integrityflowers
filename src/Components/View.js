@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/view/view.css";
 import img1 from "../assets/images/navbar/1717530807_Sparkle.jpg";
 import img2 from "../assets/images/navbar/1717531008_A ray of sunshine.jpg";
@@ -31,6 +32,8 @@ import img26 from "../assets/images/treats/1716719383_Malteser & Galaxy Chocolat
 import img27 from "../assets/images/treats/1716719647_Ferrero & Lindt.jpg";
 
 function View() {
+  const navigate = useNavigate();
+
   const categories = [
     {
       title: "Flowers",
@@ -103,6 +106,11 @@ function View() {
       ],
     },
   ];
+
+  const handleImageClick = (item) => {
+    navigate("/information", { state: { item } });
+  };
+
   return (
     <div className="main">
       {categories.map((category, index) => (
@@ -114,7 +122,11 @@ function View() {
           <div className="flower-grid">
             {category.items.map((item, idx) => (
               <div className="flower-card" key={idx}>
-                <img src={item.src} alt={item.alt} />
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  onClick={() => handleImageClick(item)}
+                />
                 <h3 id="hover-p">{item.alt}</h3>
                 <p id="hover-p">{item.price}</p>
               </div>

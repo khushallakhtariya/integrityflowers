@@ -4,6 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "../assets/Number/Number.css";
 import chat from "../assets/images/contect/chat.svg";
 import Footer from "./Footer";
+import NavBar from "./NavBar";
+
 const Number = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -44,6 +46,9 @@ const Number = () => {
 
   return (
     <>
+      <div className="container-div-navbar">
+        <NavBar />
+      </div>
       <div className="contact-form-container-q">
         <div className="banner-tt">
           <div className="banner-text-tt">

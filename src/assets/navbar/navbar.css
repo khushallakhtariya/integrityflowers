@@ -212,6 +212,7 @@
 .sidebar-container.open {
   transition: all 0.5s ease;
   right: 0;
+  padding: 15px;
 }
 
 
@@ -266,3 +267,77 @@
 color: #fff;
 }
 
+
+
+.order-summary{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+}
+.order-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.order-summary h2{
+    font-size: 15px;
+}
+
+
+.delivery-date{
+  display: flex;
+  flex-direction:row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery-date-text{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+.basket-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.basket-buttons button{
+  width: 100%;
+}
+.remove-order{
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: pink;
+  color: #fff;
+  &:hover{
+    background-color: gray;
+  }
+}
+.checkout-button{
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: pink;
+  color: #fff;
+  &:hover{
+    background-color: gray;
+  }
+}
+
+.total{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  }

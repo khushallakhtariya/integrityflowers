@@ -1,0 +1,54 @@
+.delivery-container-ll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.form-group-ll {
+    margin-bottom: 1rem;
+    display: flex;
+
+    width: 400px;
+    flex-direction: column; /* Add this line to make fields vertical */
+}
+  
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    width: 100%; 
+    
+}
+  
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+    width: 100%; /* Adjusted to make inputs as wide as the container */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  
+.btn-ll {
+    background-color: #f08080; /* Light pink color */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.btn:hover {
+    background-color: #d46b78; /* Slightly darker pink on hover */
+}
+.form-ll{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
