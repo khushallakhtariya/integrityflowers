@@ -8,7 +8,6 @@ import Flower4 from "../assets/images/navbar/1716546310_2.jpg";
 import UniqueTreats from "../assets/images/navbar/1716548795_Happy Birthday Hamper .jpg";
 import UniqueTreats2 from "../assets/images/navbar/1716548833_Cadbury Variety.jpg";
 import { useNavigate, useLocation } from "react-router-dom";
-
 function NavBar({ name, date, price }) {
   const links = [
     "Summer Bloms",
@@ -80,11 +79,13 @@ function NavBar({ name, date, price }) {
   };
 
   const handleRemoveOrder = () => {
-    setOrder(null);
-    setDeliveryDate(null);
-    localStorage.removeItem("order");
-    localStorage.removeItem("deliveryDate");
-    console.log("Remove order clicked");
+    if (window.confirm("Are you sure you want to remove the order?")) {
+      setOrder(null);
+      setDeliveryDate(null);
+      localStorage.removeItem("order");
+      localStorage.removeItem("deliveryDate");
+      console.log("Remove order clicked");
+    }
   };
 
   const [order, setOrder] = useState({
@@ -99,9 +100,13 @@ function NavBar({ name, date, price }) {
     const savedDeliveryDate = localStorage.getItem("deliveryDate");
     if (savedOrder) {
       setOrder(JSON.parse(savedOrder));
+    } else {
+      setOrder(null);
     }
     if (savedDeliveryDate) {
       setDeliveryDate(savedDeliveryDate);
+    } else {
+      setDeliveryDate(null);
     }
   }, []);
 
@@ -148,7 +153,8 @@ function NavBar({ name, date, price }) {
               <p onClick={() => navigate("/number")}>+1234567890 |</p>
             </div>
             <div className="navbar-cart-icons">
-              <i className="fa-solid fa-basket-shopping"></i>{" "}
+              <i className="fa-solid fa-basket-shopping"></i>
+              {""}
               <p onClick={handleSideBar}>Basket ({order ? 1 : 0})</p>
             </div>
           </div>

@@ -6,16 +6,18 @@ import Slider from "./Components/Slider";
 import Shopping from "./Components/Shopping";
 import View from "./Components/View";
 import EmailSection from "./Components/EmailSection";
+import Game from "./Components/Game";
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar />
       <Slider />
       <Content />
       <Shopping />
       <View />
       <EmailSection />
-      <Footer />  
+      <Footer />   */}
+      <Game />
     </div>
   );
 }
